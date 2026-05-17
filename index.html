@@ -9,9 +9,6 @@
     <meta name="description" content="Clínica Reali em São José dos Campos: implante dentário, lente de contato dental, clareamento e estética facial. Agende pelo WhatsApp.">
     <meta name="keywords" content="clínica odontológica São José dos Campos, implante dentário SJC, lente de contato dental, estética dental, Clínica Reali">
     
-    <!-- Otimização de LCP (Preload da Imagem de Fundo Principal) -->
-    <link rel="preload" as="image" href="img/background-clinica-reali-odontologia-sjc.jpg">
-    
     <!-- URL Canonicalizada Oficial para impedir desvio de autoridade -->
     <link rel="canonical" href="https://clinicaodontologicareali.vercel.app/">
 
@@ -75,20 +72,8 @@
             align-items: center;
             justify-content: flex-start;
             position: relative;
-            background-color: #6A8F76; /* Fallback de cor sage profundo */
+            background-color: #394435; /* Tom verde escuro monocromático extraído exatamente da imagem enviada */
             margin: 0;
-        }
-
-        /* Overlay Escuro para Garantir Legibilidade */
-        .bg-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.30); /* Overlay equilibrado de 30% */
-            z-index: 1;
-            pointer-events: none;
         }
 
         /* Container Principal que funciona como o Card Translúcido unificado de ponta a ponta */
@@ -105,13 +90,13 @@
             position: relative;
             box-sizing: border-box;
             
-            /* Efeito Glassmorphism Escuro Unificado (Ajustado para maior transparência: 0.50) */
-            background: rgba(22, 33, 26, 0.50); /* Tom sage escuro e profundo suavizado para revelar mais a foto de fundo */
-            border-left: 1px solid rgba(143, 175, 151, 0.15); /* Borda em tom sage sutilmente mais discreta */
+            /* Efeito Glassmorphism Escuro Unificado */
+            background: rgba(22, 33, 26, 0.50); /* Tom sage escuro e profundo suavizado */
+            border-left: 1px solid rgba(143, 175, 151, 0.15); /* Borda em tom sage sutil */
             border-right: 1px solid rgba(143, 175, 151, 0.15);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            box-shadow: 0 0 40px rgba(0, 0, 0, 0.40);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.30);
         }
 
         /* Conteúdo Interno com Proteção de Margem para Elementos Soltos */
@@ -137,7 +122,7 @@
             height: auto;
             max-height: 180px; /* Ampliado em mais 20% para máximo destaque e legibilidade */
             object-fit: contain;
-            filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.30)); /* Sombra aprimorada para descolar do fundo mais claro */
+            filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.25)); /* Sombra para destaque tridimensional */
         }
 
         h1 {
@@ -150,7 +135,7 @@
             text-align: center;
             margin: 0;
             padding: 0 16px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
         }
 
         /* Divisor Sutil */
@@ -190,7 +175,7 @@
             background: rgba(143, 175, 151, 0.45);
             border-color: rgba(184, 206, 192, 0.6);
             transform: scale(1.03);
-            box-shadow: 0 4px 20px rgba(143, 175, 151, 0.4);
+            box-shadow: 0 4px 20px rgba(143, 175, 151, 0.3);
         }
 
         /* Ajustes específicos de layout para o botão do Accordion */
@@ -271,6 +256,35 @@
             margin-top: 4px;
         }
 
+        /* Botão de Destaque CTA dentro do Painel de Serviços */
+        .accordion-cta-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background: #8FAF97; /* Sage green de destaque */
+            color: #16211A; /* Texto escuro para excelente legibilidade e contraste */
+            font-family: 'Jost', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            cursor: pointer;
+            box-sizing: border-box;
+            margin-top: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .accordion-cta-btn:hover, .accordion-cta-btn:active {
+            background: #B8CEC0; /* Sage green claro ao interagir */
+            transform: scale(1.02);
+            box-shadow: 0 4px 20px rgba(143, 175, 151, 0.4);
+        }
+
         footer {
             width: 100%;
             background: rgba(0, 0, 0, 0.55);
@@ -323,32 +337,10 @@
             color: #FFFFFF;
             text-decoration: underline;
         }
-
-        /* Fallback de Performance Otimizado para Exibição no Preview */
-        .bg-fallback-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #6A8F76;
-            background-image: linear-gradient(135deg, rgba(110,140,120,0.8), rgba(60,80,70,0.9)), 
-                              url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1080');
-            background-size: cover;
-            background-position: center;
-            z-index: 0;
-        }
     </style>
 </head>
 
-<!-- Mantendo o plano de fundo local com performance otimizada (sem background-attachment fixed) -->
-<body style="background-image: url('img/background-clinica-reali-odontologia-sjc.jpg'); background-size: cover; background-position: center;">
-
-    <!-- Fallback elegante para o Preview do sistema se a imagem local não carregar -->
-    <div class="bg-fallback-wrapper"></div>
-    
-    <!-- Overlay de 30% para contraste -->
-    <div class="bg-overlay"></div>
+<body>
 
     <!-- Container Centralizado do Mini Site (Footer embutido no fluxo natural) -->
     <div class="container-wrapper">
@@ -418,6 +410,11 @@
                             <div class="category-text">Atendimento de emergência a qualquer hora</div>
                         </div>
 
+                        <!-- Botão de Conversão Direta (CTA) dentro do Accordion -->
+                        <a href="https://wa.me/5512991843883?text=Oi!%20Vim%20pelo%20link%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" class="accordion-cta-btn">
+                            Agendar pelo WhatsApp
+                        </a>
+
                     </div>
                 </div>
             </div>
@@ -485,15 +482,6 @@
                 logo.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="100%25" height="100%25"><text x="150" y="45" font-family="Cormorant Garamond, serif" font-size="34" fill="%23FFFFFF" font-weight="bold" text-anchor="middle" letter-spacing="4">CLÍNICA REALI</text><text x="150" y="75" font-family="Jost, sans-serif" font-size="12" fill="%23B8CEC0" text-anchor="middle" letter-spacing="3" font-weight="500">ODONTOLOGIA E ESTÉTICA</text></svg>';
             }
         }
-
-        // Validação inteligente do arquivo de fundo local
-        const img = new Image();
-        img.src = "img/background-clinica-reali-odontologia-sjc.jpg";
-        img.onload = function() {
-            // Se a imagem de fundo carregar localmente, remove a de fallback para evitar sobreposição desnecessária
-            const fallback = document.querySelector('.bg-fallback-wrapper');
-            if (fallback) fallback.style.display = 'none';
-        };
     </script>
 </body>
 </html>
