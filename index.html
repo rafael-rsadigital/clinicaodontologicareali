@@ -71,47 +71,49 @@
 
         .logo-wrapper {
             position: relative;
-            width: 110px;
-            height: 110px;
+            width: 85%; /* Largura idêntica à dos botões */
             margin-bottom: 24px;
         }
 
         .halo-ring {
             position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            border-radius: 50%;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border-radius: 12px; /* Acompanha o leve arredondado dos botões com sutil folga */
             background: linear-gradient(135deg, #B8CEC0, #8FAF97, #6A8F76, #B8CEC0);
             background-size: 300% 300%;
             z-index: 1;
-            animation: halo-rotate 12s linear infinite, halo 3s ease-in-out infinite;
+            /* Removemos a rotação de elemento para evitar deformação retangular, priorizando fluxo de cor */
+            animation: halo-flow 8s ease infinite, halo-pulse 3s ease-in-out infinite;
         }
 
         .logo-img {
             position: relative;
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid rgba(255, 255, 255, 0.85);
+            width: 100%;
+            height: auto;
+            max-height: 100px; /* Limita a altura para que o logotipo mantenha proporção horizontal elegante */
+            object-fit: contain;
+            border-radius: 10px; /* Canto com leve arredondado igual aos botões */
+            border: 1px solid rgba(255, 255, 255, 0.35);
             background: #FFFFFF;
             z-index: 2;
+            padding: 12px 24px; /* Margem interna para destacar a identidade visual */
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
 
-        /* Animações do Halo */
-        @keyframes halo-rotate {
-            0% { background-position: 0% 50%; transform: rotate(0deg); }
+        /* Animações fluidas exclusivas para o formato retangular */
+        @keyframes halo-flow {
+            0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; transform: rotate(360deg); }
+            100% { background-position: 0% 50%; }
         }
 
-        @keyframes halo {
-            0% { box-shadow: 0 0 12px 4px rgba(184,206,192,0.5); }
-            50% { box-shadow: 0 0 28px 10px rgba(143,175,151,0.8); }
-            100% { box-shadow: 0 0 12px 4px rgba(184,206,192,0.5); }
+        @keyframes halo-pulse {
+            0% { box-shadow: 0 0 10px 2px rgba(184,206,192,0.4); }
+            50% { box-shadow: 0 0 24px 8px rgba(143,175,151,0.7); }
+            100% { box-shadow: 0 0 10px 2px rgba(184,206,192,0.4); }
         }
 
         h1 {
@@ -269,13 +271,12 @@
         <!-- Conteúdo Superior e Centralizado -->
         <div class="w-full flex flex-col items-center">
             
-            <!-- Logo em Círculo com Halo Luminoso -->
+            <!-- Logotipo Retangular com Halo Luminoso Acoplado -->
             <div class="logo-wrapper">
                 <div class="halo-ring"></div>
-                <!-- Logotipo atualizado para a pasta img com texto alternativo para SEO -->
                 <img class="logo-img" 
                      src="img/logotipo-clinica-reali-odontologia-sjc.png" 
-                     alt="Logotipo oficial da Clínica Reali - Odontologia e Estética em São José dos Campos" 
+                     alt="Logotipo oficial retangular da Clínica Reali - Odontologia e Estética em São José dos Campos" 
                      id="logoImg" 
                      onerror="handleLogoFallback()">
             </div>
@@ -393,12 +394,12 @@
             }
         }
 
-        // Fallback dinâmico para o logotipo do Preview
+        // Fallback dinâmico para o logotipo do Preview adaptado para o formato de placa retangular
         function handleLogoFallback() {
             const logo = document.getElementById('logoImg');
             if (logo) {
-                // Gera dinamicamente um monograma de segurança com tons de sage green e traço fino
-                logo.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="110" height="110"><rect width="100" height="100" fill="%238FAF97"/><circle cx="50" cy="50" r="42" fill="none" stroke="%23FFFFFF" stroke-width="1.5" stroke-dasharray="2, 2"/><text x="50" y="58" font-family="Cormorant Garamond, serif" font-size="28" fill="%23FFFFFF" font-weight="bold" text-anchor="middle" letter-spacing="2">CR</text></svg>';
+                // Gera dinamicamente um monograma retangular estilo placa profissional
+                logo.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="100%25" height="100%25"><rect width="300" height="100" fill="%238FAF97" rx="10"/><rect x="6" y="6" width="288" height="88" fill="none" stroke="%23FFFFFF" stroke-width="1.2" stroke-dasharray="3, 3" rx="8"/><text x="150" y="52" font-family="Cormorant Garamond, serif" font-size="28" fill="%23FFFFFF" font-weight="bold" text-anchor="middle" letter-spacing="4">CLÍNICA REALI</text><text x="150" y="74" font-family="Jost, sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" text-anchor="middle" letter-spacing="2">ODONTOLOGIA E ESTÉTICA</text></svg>';
             }
         }
 
