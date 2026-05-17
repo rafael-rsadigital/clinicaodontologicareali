@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica Reali | Odontologia e Estética – São José dos Campos</title>
     
-    <!-- Meta Tags Estratégicas de SEO -->
+    <!-- Meta Tags Estratégicas de SEO Local -->
     <meta name="description" content="Clínica Reali em São José dos Campos: implante dentário, lente de contato dental, clareamento e estética facial. Agende pelo WhatsApp.">
     <meta name="keywords" content="clínica odontológica São José dos Campos, implante dentário SJC, lente de contato dental, estética dental, Clínica Reali">
     
@@ -79,105 +79,78 @@
             margin: 0;
         }
 
-        /* Overlay Escuro para Legibilidade */
+        /* Overlay Escuro para Garantir Legibilidade */
         .bg-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.30); /* Overlay de 30% */
+            background: rgba(0, 0, 0, 0.30); /* Overlay equilibrado de 30% */
             z-index: 1;
             pointer-events: none;
         }
 
-        /* Container Principal Mobile-First (Max 420px) */
+        /* Container Principal Mobile-First (Sem espaçamento lateral para o rodapé tocar as bordas) */
         .container-wrapper {
             width: 100%;
             max-width: 420px;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Empurra o rodapé para o final naturalmente */
+            justify-content: space-between; /* Empurra o rodapé para a base naturalmente */
             align-items: center;
             z-index: 2;
-            padding: 40px 20px 0 20px;
+            padding: 40px 0 0 0;
             position: relative;
             box-sizing: border-box;
         }
 
+        /* Conteúdo Interno com Proteção de Margem para Elementos Soltos */
         .content-container {
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-
-        .logo-wrapper {
-            position: relative;
-            width: 85%; /* Largura idêntica à dos botões */
-            margin-bottom: 24px;
-        }
-
-        .halo-ring {
-            position: absolute;
-            top: -4px;
-            left: -4px;
-            right: -4px;
-            bottom: -4px;
-            border-radius: 12px; /* Acompanha o leve arredondado com sutil folga */
-            background: linear-gradient(135deg, #B8CEC0, #8FAF97, #6A8F76, #B8CEC0);
-            background-size: 300% 300%;
-            z-index: 1;
-            animation: halo-flow 8s ease infinite, halo-pulse 3s ease-in-out infinite;
-        }
-
-        .logo-img {
-            position: relative;
-            width: 100%;
-            height: auto;
-            max-height: 100px; /* Limita a altura para que o logotipo mantenha proporção */
-            object-fit: contain;
-            border-radius: 10px; /* Canto com leve arredondado igual aos botões */
-            border: 1px solid rgba(255, 255, 255, 0.35);
-            background: #FFFFFF;
-            z-index: 2;
-            padding: 12px 24px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            padding: 0 20px;
             box-sizing: border-box;
         }
 
-        /* Animações fluidas exclusivas para o formato retangular */
-        @keyframes halo-flow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .logo-container {
+            width: 85%;
+            margin-bottom: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        @keyframes halo-pulse {
-            0% { box-shadow: 0 0 10px 2px rgba(184,206,192,0.4); }
-            50% { box-shadow: 0 0 24px 8px rgba(143,175,151,0.7); }
-            100% { box-shadow: 0 0 10px 2px rgba(184,206,192,0.4); }
+        .logo-img {
+            width: 100%;
+            height: auto;
+            max-height: 150px; /* Aumentado em 50% para destaque e leitura perfeita */
+            object-fit: contain;
+            filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25)); /* Sombra suave para destacar do fundo */
         }
 
         h1 {
             font-family: 'Cormorant Garamond', serif !important;
-            font-size: 1rem;
+            font-size: 1.1rem;
             line-height: 1.4;
             letter-spacing: 0.08em;
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.90);
             font-weight: 400;
             text-align: center;
             margin: 0;
             padding: 0 16px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         /* Divisor Sutil */
         .clinical-divider {
             width: 35px;
             height: 1px;
-            background: rgba(184, 206, 192, 0.4);
-            margin: 16px 0 24px 0;
+            background: rgba(184, 206, 192, 0.45);
+            margin: 20px 0 24px 0;
         }
 
         .action-btn {
@@ -198,7 +171,7 @@
             text-align: center;
             text-transform: uppercase;
             padding: 14px 24px;
-            border-radius: 10px; /* Canto levemente arredondado solicitado */
+            border-radius: 10px; /* Canto suavemente arredondado e sofisticado */
             transition: all 0.3s ease;
             text-decoration: none;
             cursor: pointer;
@@ -250,7 +223,7 @@
         }
 
         .accordion-content.open {
-            max-height: 600px; /* Permitindo espaço suficiente para a transição do conteúdo */
+            max-height: 600px;
             border: 1px solid rgba(255, 255, 255, 0.20);
             margin-bottom: 12px;
         }
@@ -295,11 +268,11 @@
             background: rgba(0, 0, 0, 0.55);
             backdrop-filter: blur(6px);
             -webkit-backdrop-filter: blur(6px);
-            padding: 14px 20px;
+            padding: 24px 20px;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px 16px 0 0;
-            margin-top: 40px; /* Espaço para respirar antes do rodapé */
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            /* Sem cantos arredondados e sem margem lateral: seção de site perfeita */
+            margin-top: 48px;
             box-sizing: border-box;
         }
 
@@ -307,13 +280,16 @@
             font-family: 'Jost', sans-serif;
             font-size: 0.72rem;
             color: rgba(255, 255, 255, 0.80);
-            line-height: 1.5;
+            line-height: 1.6;
             letter-spacing: 0.06em;
         }
 
         .footer-title {
             font-weight: 500;
             font-size: 0.76rem;
+            display: block;
+            margin-bottom: 6px;
+            color: #FFFFFF;
         }
 
         .footer-address-wrapper {
@@ -340,7 +316,7 @@
             text-decoration: underline;
         }
 
-        /* Fallback inteligente para exibição no Preview */
+        /* Fallback de Performance Otimizado para Exibição no Preview */
         .bg-fallback-wrapper {
             position: fixed;
             top: 0;
@@ -372,12 +348,10 @@
         <!-- Conteúdo Superior e Centralizado -->
         <div class="content-container">
             
-            <!-- Logotipo Retangular com Halo Luminoso Acoplado -->
-            <div class="logo-wrapper">
-                <div class="halo-ring"></div>
+            <div class="logo-container">
                 <img class="logo-img" 
                      src="img/logotipo-clinica-reali-odontologia-sjc.png" 
-                     alt="Logotipo oficial retangular da Clínica Reali - Odontologia e Estética em São José dos Campos" 
+                     alt="Logotipo oficial da Clínica Reali - Odontologia e Estética em São José dos Campos" 
                      id="logoImg" 
                      onerror="handleLogoFallback()">
             </div>
@@ -395,7 +369,6 @@
                 Falar no WhatsApp
             </a>
 
-            <!-- Botão 2: Serviços (Acordeão) -->
             <div class="accordion-container">
                 <button id="servicesBtn" class="action-btn services-btn" onclick="toggleServices()">
                     <span>SERVIÇOS</span>
@@ -457,7 +430,6 @@
 
         </div>
 
-        <!-- Rodapé Estruturado e Fixo ao Final da Página -->
         <footer>
             <div class="footer-content">
                 <span class="footer-title">Clínica Reali · Odontologia e Estética</span>
@@ -495,20 +467,20 @@
             }
         }
 
-        // Fallback dinâmico para o logotipo do Preview adaptado para o formato de placa retangular
+        // Fallback dinâmico para o logotipo em formato de texto solto e elegante
         function handleLogoFallback() {
             const logo = document.getElementById('logoImg');
             if (logo) {
-                // Gera dinamicamente um monograma retangular estilo placa profissional
-                logo.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="100%25" height="100%25"><rect width="300" height="100" fill="%238FAF97" rx="10"/><rect x="6" y="6" width="288" height="88" fill="none" stroke="%23FFFFFF" stroke-width="1.2" stroke-dasharray="3, 3" rx="8"/><text x="150" y="52" font-family="Cormorant Garamond, serif" font-size="28" fill="%23FFFFFF" font-weight="bold" text-anchor="middle" letter-spacing="4">CLÍNICA REALI</text><text x="150" y="74" font-family="Jost, sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" text-anchor="middle" letter-spacing="2">ODONTOLOGIA E ESTÉTICA</text></svg>';
+                // Gera dinamicamente um monograma de texto transparente sem contêiner físico
+                logo.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="100%25" height="100%25"><text x="150" y="45" font-family="Cormorant Garamond, serif" font-size="34" fill="%23FFFFFF" font-weight="bold" text-anchor="middle" letter-spacing="4">CLÍNICA REALI</text><text x="150" y="75" font-family="Jost, sans-serif" font-size="12" fill="%23B8CEC0" text-anchor="middle" letter-spacing="3" font-weight="500">ODONTOLOGIA E ESTÉTICA</text></svg>';
             }
         }
 
-        // Validação inteligente do arquivo de fundo
+        // Validação inteligente do arquivo de fundo local
         const img = new Image();
         img.src = "img/background-clinica-reali-odontologia-sjc.jpg";
         img.onload = function() {
-            // Se a imagem de fundo local carregar com sucesso, desativa a imagem de fallback
+            // Se a imagem de fundo carregar localmente, remove a de fallback para evitar sobreposição desnecessária
             const fallback = document.querySelector('.bg-fallback-wrapper');
             if (fallback) fallback.style.display = 'none';
         };
