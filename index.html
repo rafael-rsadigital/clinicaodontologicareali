@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Reali | Odontologia e Estética – São José dos Campos</title>
+    
+    <!-- Meta Tags Estratégicas de SEO -->
+    <meta name="description" content="Clínica Reali em São José dos Campos: implante dentário, lente de contato dental, clareamento e estética facial. Agende pelo WhatsApp.">
+    <meta name="keywords" content="clínica odontológica São José dos Campos, implante dentário SJC, lente de contato dental, estética dental, Clínica Reali">
+    
+    <!-- Open Graph (Redes Sociais) -->
+    <meta property="og:title" content="Clínica Reali | Odontologia e Estética">
+    <meta property="og:description" content="Odontologia de excelência e estética avançada em São José dos Campos. Agende sua consulta!">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://www.instagram.com/clinicarealisjc/">
+
+    <!-- Google Fonts Gratuitas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS (Utilizado para estruturação fluida) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+            height: -webkit-fill-available;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            color: #FFFFFF;
+            min-height: 100vh;
+            min-height: -webkit-fill-available;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            position: relative;
+            background-color: #6A8F76; /* Fallback de cor sage profundo */
+        }
+
+        /* Overlay Escuro para Legibilidade */
+        .bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.30); /* Overlay de 30% */
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Container Principal Mobile-First (Max 420px) */
+        .container-wrapper {
+            width: 100%;
+            max-width: 420px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Empurra o rodapé para o final naturalmente */
+            align-items: center;
+            z-index: 2;
+            padding: 40px 20px 0 20px;
+            position: relative;
+        }
+
+        .logo-wrapper {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            margin-bottom: 24px;
+        }
+
+        .halo-ring {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #B8CEC0, #8FAF97, #6A8F76, #B8CEC0);
+            background-size: 300% 300%;
+            z-index: 1;
+            animation: halo-rotate 12s linear infinite, halo 3s ease-in-out infinite;
+        }
+
+        .logo-img {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.85);
+            background: #FFFFFF;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Animações do Halo */
+        @keyframes halo-rotate {
+            0% { background-position: 0% 50%; transform: rotate(0deg); }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; transform: rotate(360deg); }
+        }
+
+        @keyframes halo {
+            0% { box-shadow: 0 0 12px 4px rgba(184,206,192,0.5); }
+            50% { box-shadow: 0 0 28px 10px rgba(143,175,151,0.8); }
+            100% { box-shadow: 0 0 12px 4px rgba(184,206,192,0.5); }
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif !important;
+            font-size: 1rem;
+            line-height: 1.4;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 400;
+            text-align: center;
+        }
+
+        /* Divisor Sutil */
+        .clinical-divider {
+            width: 35px;
+            height: 1px;
+            background: rgba(184, 206, 192, 0.4);
+            margin: 16px 0 24px 0;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 85%;
+            margin-bottom: 12px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: #FFFFFF;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 0.12em;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 14px 24px;
+            border-radius: 10px; /* Canto levemente arredondado solicitado */
+            transition: all 0.3s ease;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .action-btn:hover, .action-btn:active {
+            background: rgba(143, 175, 151, 0.45);
+            border-color: rgba(184, 206, 192, 0.6);
+            transform: scale(1.03);
+            box-shadow: 0 4px 20px rgba(143, 175, 151, 0.4);
+        }
+
+        .accordion-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .accordion-content {
+            width: 85%;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.0); /* Invisível por padrão */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 16px;
+            box-sizing: border-box;
+            margin-bottom: 0;
+        }
+
+        .accordion-content.open {
+            max-height: 600px; /* Permitindo espaço suficiente para a transição do conteúdo */
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            margin-bottom: 12px;
+        }
+
+        .category-title {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            color: #B8CEC0; /* Sage Green Claro */
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .category-text {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.80);
+            line-height: 1.4;
+        }
+
+        footer {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            padding: 14px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px 16px 0 0;
+            margin-top: 40px; /* Espaço para respirar antes do rodapé */
+        }
+
+        .footer-content {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.80);
+            line-height: 1.5;
+            letter-spacing: 0.06em;
+        }
+
+        .footer-link {
+            color: #B8CEC0;
+            transition: color 0.2s ease;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            color: #FFFFFF;
+            text-decoration: underline;
+        }
+
+        /* Fallback inteligente para exibição no Preview */
+        .bg-fallback-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #6A8F76;
+            background-image: linear-gradient(135deg, rgba(110,140,120,0.8), rgba(60,80,70,0.9)), 
+                              url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1080');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<!-- Mantendo a tag de background conforme especificado, utilizando o novo caminho na pasta img -->
+<body style="background-image: url('img/background-clinica-reali-odontologia-sjc.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+
+    <!-- Fallback elegante para o Preview do sistema -->
+    <div class="bg-fallback-wrapper"></div>
+    
+    <!-- Overlay de 30% para contraste -->
+    <div class="bg-overlay"></div>
+
+    <!-- Container Centralizado do Mini Site (Footer embutido para seguir o fluxo da página) -->
+    <div class="container-wrapper">
+        
+        <!-- Conteúdo Superior e Centralizado -->
+        <div class="w-full flex flex-col items-center">
+            
+            <!-- Logo em Círculo com Halo Luminoso -->
+            <div class="logo-wrapper">
+                <div class="halo-ring"></div>
+                <!-- Logotipo atualizado para a pasta img com texto alternativo para SEO -->
+                <img class="logo-img" 
+                     src="img/logotipo-clinica-reali-odontologia-sjc.png" 
+                     alt="Logotipo oficial da Clínica Reali - Odontologia e Estética em São José dos Campos" 
+                     id="logoImg" 
+                     onerror="handleLogoFallback()">
+            </div>
+
+            <!-- H1 Estratégico para SEO Local -->
+            <h1 class="px-4">
+                Clínica Reali | Odontologia e Estética em São José dos Campos
+            </h1>
+
+            <!-- Divisor Sutil de Elementos -->
+            <div class="clinical-divider"></div>
+
+            <!-- Botão 1: WhatsApp -->
+            <a href="https://wa.me/5512991843883?text=Oi!%20Vim%20pelo%20link%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" class="action-btn">
+                Falar no WhatsApp
+            </a>
+
+            <!-- Botão 2: Serviços (Acordeão) -->
+            <div class="accordion-container">
+                <button id="servicesBtn" class="action-btn flex justify-between items-center" onclick="toggleServices()">
+                    <span class="flex-grow pl-6">SERVIÇOS</span>
+                    <span id="servicesArrow" class="transition-transform duration-300 transform inline-block text-[0.8rem]">▼</span>
+                </button>
+                
+                <!-- Painel de Serviços com Transição de Altura Suave -->
+                <div id="servicesAccordion" class="accordion-content">
+                    <div class="p-5 flex flex-col gap-4">
+                        
+                        <!-- Categoria: Implantes -->
+                        <div class="text-left border-b border-white/5 pb-2">
+                            <div class="category-title">IMPLANTES DENTÁRIOS</div>
+                            <div class="category-text mt-1">Prótese Protocolo · Carga Imediata · Unitários · Implantes Zigomáticos</div>
+                        </div>
+
+                        <!-- Categoria: Harmonização -->
+                        <div class="text-left border-b border-white/5 pb-2">
+                            <div class="category-title">HARMONIZAÇÃO OROFACIAL</div>
+                            <div class="category-text mt-1">Preenchimento Labial · Rinomodelação · Full Face · Bioestimulador de Colágeno</div>
+                        </div>
+
+                        <!-- Categoria: Estética -->
+                        <div class="text-left border-b border-white/5 pb-2">
+                            <div class="category-title">ESTÉTICA DENTAL</div>
+                            <div class="category-text mt-1">Lentes de Contato Dental · Facetas em Resina · Clareamento</div>
+                        </div>
+
+                        <!-- Categoria: Clínica Geral -->
+                        <div class="text-left border-b border-white/5 pb-2">
+                            <div class="category-title">CLÍNICA GERAL</div>
+                            <div class="category-text mt-1">Ortodontia Fixa e Invisível · Endodontia · Periodontia · Exodontias · Odontopediatria</div>
+                        </div>
+
+                        <!-- Categoria: Urgência -->
+                        <div class="text-left">
+                            <div class="category-title">URGÊNCIA 24H</div>
+                            <div class="category-text mt-1">Atendimento de emergência a qualquer hora</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão 3: Instagram -->
+            <a href="https://www.instagram.com/clinicarealisjc/" target="_blank" class="action-btn">
+                CLINICAREALISJC
+            </a>
+
+            <!-- Botão 4: Como Chegar -->
+            <a href="https://maps.app.goo.gl/NvWUKbM8pzLGhc5QA" target="_blank" class="action-btn">
+                Como Chegar
+            </a>
+
+            <!-- Botão 5: Avaliar -->
+            <a href="https://g.page/r/CVF1BI1reJVmEBM/review" target="_blank" class="action-btn">
+                Avalie no Google
+            </a>
+
+        </div>
+
+        <!-- Rodapé Estruturado e Fixo ao Final da Página -->
+        <footer>
+            <div class="footer-content">
+                <span class="font-medium text-[0.76rem]">Clínica Reali · Odontologia e Estética</span>
+                <div class="my-1.5">
+                    <a class="footer-link" href="https://maps.app.goo.gl/NvWUKbM8pzLGhc5QA" target="_blank">
+                        R. Cel. João Cursino, 185 – Vila Adyana<br>
+                        São José dos Campos – SP · CEP 12243-680
+                    </a>
+                </div>
+                <div class="mt-2">
+                    <a class="footer-link font-medium text-[0.78rem]" href="tel:+5512991843883">
+                        (12) 99184-3883
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // Função para Abrir/Fechar o Acordeão de Serviços de maneira fluida
+        function toggleServices() {
+            const accordion = document.getElementById('servicesAccordion');
+            const arrow = document.getElementById('servicesArrow');
+            
+            if (accordion.classList.contains('open')) {
+                accordion.classList.remove('open');
+                accordion.style.maxHeight = '0px';
+                arrow.style.transform = 'rotate(0deg)';
+            } else {
+                accordion.classList.add('open');
+                // Atribui o scrollHeight para garantir transição suave até o tamanho total real
+                accordion.style.maxHeight = accordion.scrollHeight + 'px';
+                arrow.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Fallback dinâmico para o logotipo do Preview
+        function handleLogoFallback() {
+            const logo = document.getElementById('logoImg');
+            if (logo) {
+                // Gera dinamicamente um monograma de segurança com tons de sage green e traço fino
+                logo.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="110" height="110"><rect width="100" height="100" fill="%238FAF97"/><circle cx="50" cy="50" r="42" fill="none" stroke="%23FFFFFF" stroke-width="1.5" stroke-dasharray="2, 2"/><text x="50" y="58" font-family="Cormorant Garamond, serif" font-size="28" fill="%23FFFFFF" font-weight="bold" text-anchor="middle" letter-spacing="2">CR</text></svg>';
+            }
+        }
+
+        // Validação inteligente do arquivo de fundo
+        const img = new Image();
+        img.src = "img/background-clinica-reali-odontologia-sjc.jpg";
+        img.onload = function() {
+            // Se a imagem de fundo local carregar no ambiente de hospedagem do cliente, desativa a imagem de fallback
+            const fallback = document.querySelector('.bg-fallback-wrapper');
+            if (fallback) fallback.style.display = 'none';
+        };
+    </script>
+</body>
+</html>
