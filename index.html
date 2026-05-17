@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica Reali | Odontologia e Estética – São José dos Campos</title>
     
+    <!-- Favicon Oficial -->
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+
     <!-- Meta Tags Estratégicas de SEO Local -->
     <meta name="description" content="Clínica Reali em São José dos Campos: implante dentário, lente de contato dental, clareamento e estética facial. Agende pelo WhatsApp.">
-    <meta name="keywords" content="clínica odontológica São José dos Campos, implante dentário SJC, lente de contato dental, estética dental, Clínica Reali">
     
+    <!-- Cor de Tema da Interface do Navegador (Theme Color) -->
+    <meta name="theme-color" content="#394435">
+
     <!-- URL Canonicalizada Oficial para impedir desvio de autoridade -->
     <link rel="canonical" href="https://clinicaodontologicareali.vercel.app/">
 
@@ -171,10 +176,11 @@
             box-sizing: border-box;
         }
 
+        /* Transição em mobile com translateY em vez de scale para evitar micro-pulos e lags */
         .action-btn:hover, .action-btn:active {
             background: rgba(143, 175, 151, 0.45);
             border-color: rgba(184, 206, 192, 0.6);
-            transform: scale(1.03);
+            transform: translateY(-1px);
             box-shadow: 0 4px 20px rgba(143, 175, 151, 0.3);
         }
 
@@ -265,9 +271,9 @@
             background: #8FAF97; /* Sage green de destaque */
             color: #16211A; /* Texto escuro para excelente legibilidade e contraste */
             font-family: 'Jost', sans-serif;
-            font-size: 0.85rem;
+            font-size: 0.78rem; /* Diminuído para evitar quebra de linha em telas estreitas */
             font-weight: 600;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.08em; /* Ajuste sutil de espaçamento */
             text-transform: uppercase;
             padding: 12px 20px;
             border-radius: 8px;
@@ -277,11 +283,14 @@
             box-sizing: border-box;
             margin-top: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            white-space: nowrap; /* Impede a quebra de linha de forma absoluta */
         }
 
+        /* Hover do CTA otimizado contra sobressaltos com translateY */
         .accordion-cta-btn:hover, .accordion-cta-btn:active {
             background: #B8CEC0; /* Sage green claro ao interagir */
-            transform: scale(1.02);
+            transform: translateY(-1px);
             box-shadow: 0 4px 20px rgba(143, 175, 151, 0.4);
         }
 
@@ -365,13 +374,20 @@
             <div class="clinical-divider"></div>
 
             <!-- Botão 1: WhatsApp -->
-            <a href="https://wa.me/5512991843883?text=Oi!%20Vim%20pelo%20link%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" class="action-btn">
+            <a href="https://wa.me/5512991843883?text=Oi!%20Vim%20pelo%20link%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="action-btn">
                 Falar no WhatsApp
             </a>
 
-            <!-- Botão 2: Serviços (Accordion) -->
+            <!-- Botão 2: Serviços (Accordion com Melhorias de Acessibilidade WAI-ARIA) -->
             <div class="accordion-container">
-                <button id="servicesBtn" class="action-btn services-btn" onclick="toggleServices()">
+                <button id="servicesBtn" 
+                        class="action-btn services-btn" 
+                        onclick="toggleServices()" 
+                        aria-expanded="false" 
+                        aria-controls="servicesAccordion">
                     <span>SERVIÇOS</span>
                     <span id="servicesArrow" class="arrow-icon">▼</span>
                 </button>
@@ -411,7 +427,10 @@
                         </div>
 
                         <!-- Botão de Conversão Direta (CTA) dentro do Accordion -->
-                        <a href="https://wa.me/5512991843883?text=Oi!%20Vim%20pelo%20link%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" class="accordion-cta-btn">
+                        <a href="https://wa.me/5512991843883?text=Oi!%20Vim%20pelo%20link%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="accordion-cta-btn">
                             Agendar pelo WhatsApp
                         </a>
 
@@ -420,17 +439,26 @@
             </div>
 
             <!-- Botão 3: Instagram -->
-            <a href="https://www.instagram.com/clinicarealisjc/" target="_blank" class="action-btn">
+            <a href="https://www.instagram.com/clinicarealisjc/" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="action-btn">
                 CLINICAREALISJC
             </a>
 
             <!-- Botão 4: Como Chegar -->
-            <a href="https://maps.app.goo.gl/NvWUKbM8pzLGhc5QA" target="_blank" class="action-btn">
+            <a href="https://maps.app.goo.gl/NvWUKbM8pzLGhc5QA" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="action-btn">
                 Como Chegar
             </a>
 
             <!-- Botão 5: Avaliar -->
-            <a href="https://g.page/r/CVF1BI1reJVmEBM/review" target="_blank" class="action-btn">
+            <a href="https://g.page/r/CVF1BI1reJVmEBM/review" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="action-btn">
                 Avalie no Google
             </a>
 
@@ -441,7 +469,10 @@
             <div class="footer-content">
                 <span class="footer-title">Clínica Reali · Odontologia e Estética</span>
                 <div class="footer-address-wrapper">
-                    <a class="footer-link" href="https://maps.app.goo.gl/NvWUKbM8pzLGhc5QA" target="_blank">
+                    <a class="footer-link" 
+                       href="https://maps.app.goo.gl/NvWUKbM8pzLGhc5QA" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
                         R. Cel. João Cursino, 185 – Vila Adyana<br>
                         São José dos Campos – SP · CEP 12243-680
                     </a>
@@ -457,20 +488,23 @@
     </div>
 
     <script>
-        // Função para Abrir/Fechar o Acordeão de Serviços de maneira fluida
+        // Função para Abrir/Fechar o Acordeão de Serviços de maneira fluida e gerenciar estados ARIA
         function toggleServices() {
             const accordion = document.getElementById('servicesAccordion');
             const arrow = document.getElementById('servicesArrow');
+            const btn = document.getElementById('servicesBtn');
             
             if (accordion.classList.contains('open')) {
                 accordion.classList.remove('open');
                 accordion.style.maxHeight = '0px';
                 arrow.style.transform = 'rotate(0deg)';
+                btn.setAttribute('aria-expanded', 'false');
             } else {
                 accordion.classList.add('open');
                 // Atribui o scrollHeight para garantir transição suave até o tamanho total real
                 accordion.style.maxHeight = accordion.scrollHeight + 'px';
                 arrow.style.transform = 'rotate(180deg)';
+                btn.setAttribute('aria-expanded', 'true');
             }
         }
 
