@@ -9,19 +9,54 @@
     <meta name="description" content="Clínica Reali em São José dos Campos: implante dentário, lente de contato dental, clareamento e estética facial. Agende pelo WhatsApp.">
     <meta name="keywords" content="clínica odontológica São José dos Campos, implante dentário SJC, lente de contato dental, estética dental, Clínica Reali">
     
-    <!-- Open Graph (Redes Sociais) -->
+    <!-- Otimização de LCP (Preload da Imagem de Fundo Principal) -->
+    <link rel="preload" as="image" href="img/background-clinica-reali-odontologia-sjc.jpg">
+    
+    <!-- URL Canonicalizada Oficial para impedir desvio de autoridade -->
+    <link rel="canonical" href="https://clinicaodontologicareali.vercel.app/">
+
+    <!-- Open Graph (Redes Sociais & WhatsApp Preview) -->
     <meta property="og:title" content="Clínica Reali | Odontologia e Estética">
     <meta property="og:description" content="Odontologia de excelência e estética avançada em São José dos Campos. Agende sua consulta!">
     <meta property="og:type" content="website">
-    <link rel="canonical" href="https://www.instagram.com/clinicarealisjc/">
+    <meta property="og:url" content="https://clinicaodontologicareali.vercel.app/">
+    <meta property="og:image" content="https://clinicaodontologicareali.vercel.app/img/clinica-reali-capa.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Clínica Reali | Odontologia e Estética">
+    <meta name="twitter:description" content="Odontologia de excelência em São José dos Campos.">
+    <meta name="twitter:image" content="https://clinicaodontologicareali.vercel.app/img/clinica-reali-capa.jpg">
 
     <!-- Google Fonts Gratuitas -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS (Utilizado para estruturação fluida) -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Schema.org JSON-LD (Marcação de Dados Estruturados de Negócio Local) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "name": "Clínica Reali",
+      "url": "https://clinicaodontologicareali.vercel.app/",
+      "image": "https://clinicaodontologicareali.vercel.app/img/logotipo-clinica-reali-odontologia-sjc.png",
+      "telephone": "+55-12-99184-3883",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Cel. João Cursino, 185",
+        "addressLocality": "São José dos Campos",
+        "addressRegion": "SP",
+        "postalCode": "12243-680",
+        "addressCountry": "BR"
+      },
+      "sameAs": [
+        "https://www.instagram.com/clinicarealisjc/"
+      ]
+    }
+    </script>
 
     <style>
         html {
@@ -41,6 +76,7 @@
             justify-content: flex-start;
             position: relative;
             background-color: #6A8F76; /* Fallback de cor sage profundo */
+            margin: 0;
         }
 
         /* Overlay Escuro para Legibilidade */
@@ -67,6 +103,14 @@
             z-index: 2;
             padding: 40px 20px 0 20px;
             position: relative;
+            box-sizing: border-box;
+        }
+
+        .content-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .logo-wrapper {
@@ -81,11 +125,10 @@
             left: -4px;
             right: -4px;
             bottom: -4px;
-            border-radius: 12px; /* Acompanha o leve arredondado dos botões com sutil folga */
+            border-radius: 12px; /* Acompanha o leve arredondado com sutil folga */
             background: linear-gradient(135deg, #B8CEC0, #8FAF97, #6A8F76, #B8CEC0);
             background-size: 300% 300%;
             z-index: 1;
-            /* Removemos a rotação de elemento para evitar deformação retangular, priorizando fluxo de cor */
             animation: halo-flow 8s ease infinite, halo-pulse 3s ease-in-out infinite;
         }
 
@@ -93,14 +136,15 @@
             position: relative;
             width: 100%;
             height: auto;
-            max-height: 100px; /* Limita a altura para que o logotipo mantenha proporção horizontal elegante */
+            max-height: 100px; /* Limita a altura para que o logotipo mantenha proporção */
             object-fit: contain;
             border-radius: 10px; /* Canto com leve arredondado igual aos botões */
             border: 1px solid rgba(255, 255, 255, 0.35);
             background: #FFFFFF;
             z-index: 2;
-            padding: 12px 24px; /* Margem interna para destacar a identidade visual */
+            padding: 12px 24px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
         }
 
         /* Animações fluidas exclusivas para o formato retangular */
@@ -124,6 +168,8 @@
             color: rgba(255, 255, 255, 0.85);
             font-weight: 400;
             text-align: center;
+            margin: 0;
+            padding: 0 16px;
         }
 
         /* Divisor Sutil */
@@ -156,6 +202,7 @@
             transition: all 0.3s ease;
             text-decoration: none;
             cursor: pointer;
+            box-sizing: border-box;
         }
 
         .action-btn:hover, .action-btn:active {
@@ -163,6 +210,22 @@
             border-color: rgba(184, 206, 192, 0.6);
             transform: scale(1.03);
             box-shadow: 0 4px 20px rgba(143, 175, 151, 0.4);
+        }
+
+        /* Ajustes específicos de layout para o botão do Accordion */
+        .services-btn {
+            justify-content: space-between;
+        }
+
+        .services-btn span:first-child {
+            flex-grow: 1;
+            padding-left: 24px;
+        }
+
+        .arrow-icon {
+            transition: transform 0.3s ease;
+            display: inline-block;
+            font-size: 0.8rem;
         }
 
         .accordion-container {
@@ -192,6 +255,24 @@
             margin-bottom: 12px;
         }
 
+        .accordion-inner {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .category-block {
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 8px;
+        }
+
+        .category-block:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
         .category-title {
             font-family: 'Jost', sans-serif;
             font-size: 0.72rem;
@@ -206,6 +287,7 @@
             font-size: 0.82rem;
             color: rgba(255, 255, 255, 0.80);
             line-height: 1.4;
+            margin-top: 4px;
         }
 
         footer {
@@ -218,6 +300,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px 16px 0 0;
             margin-top: 40px; /* Espaço para respirar antes do rodapé */
+            box-sizing: border-box;
         }
 
         .footer-content {
@@ -226,6 +309,24 @@
             color: rgba(255, 255, 255, 0.80);
             line-height: 1.5;
             letter-spacing: 0.06em;
+        }
+
+        .footer-title {
+            font-weight: 500;
+            font-size: 0.76rem;
+        }
+
+        .footer-address-wrapper {
+            margin: 6px 0;
+        }
+
+        .footer-phone-wrapper {
+            margin-top: 8px;
+        }
+
+        .footer-phone-link {
+            font-weight: 500;
+            font-size: 0.78rem;
         }
 
         .footer-link {
@@ -256,20 +357,20 @@
     </style>
 </head>
 
-<!-- Mantendo a tag de background conforme especificado, utilizando o novo caminho na pasta img -->
-<body style="background-image: url('img/background-clinica-reali-odontologia-sjc.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+<!-- Mantendo o plano de fundo local com performance otimizada (sem background-attachment fixed) -->
+<body style="background-image: url('img/background-clinica-reali-odontologia-sjc.jpg'); background-size: cover; background-position: center;">
 
-    <!-- Fallback elegante para o Preview do sistema -->
+    <!-- Fallback elegante para o Preview do sistema se a imagem local não carregar -->
     <div class="bg-fallback-wrapper"></div>
     
     <!-- Overlay de 30% para contraste -->
     <div class="bg-overlay"></div>
 
-    <!-- Container Centralizado do Mini Site (Footer embutido para seguir o fluxo da página) -->
+    <!-- Container Centralizado do Mini Site (Footer embutido no fluxo natural) -->
     <div class="container-wrapper">
         
         <!-- Conteúdo Superior e Centralizado -->
-        <div class="w-full flex flex-col items-center">
+        <div class="content-container">
             
             <!-- Logotipo Retangular com Halo Luminoso Acoplado -->
             <div class="logo-wrapper">
@@ -282,7 +383,7 @@
             </div>
 
             <!-- H1 Estratégico para SEO Local -->
-            <h1 class="px-4">
+            <h1>
                 Clínica Reali | Odontologia e Estética em São José dos Campos
             </h1>
 
@@ -296,43 +397,43 @@
 
             <!-- Botão 2: Serviços (Acordeão) -->
             <div class="accordion-container">
-                <button id="servicesBtn" class="action-btn flex justify-between items-center" onclick="toggleServices()">
-                    <span class="flex-grow pl-6">SERVIÇOS</span>
-                    <span id="servicesArrow" class="transition-transform duration-300 transform inline-block text-[0.8rem]">▼</span>
+                <button id="servicesBtn" class="action-btn services-btn" onclick="toggleServices()">
+                    <span>SERVIÇOS</span>
+                    <span id="servicesArrow" class="arrow-icon">▼</span>
                 </button>
                 
                 <!-- Painel de Serviços com Transição de Altura Suave -->
                 <div id="servicesAccordion" class="accordion-content">
-                    <div class="p-5 flex flex-col gap-4">
+                    <div class="accordion-inner">
                         
                         <!-- Categoria: Implantes -->
-                        <div class="text-left border-b border-white/5 pb-2">
+                        <div class="category-block">
                             <div class="category-title">IMPLANTES DENTÁRIOS</div>
-                            <div class="category-text mt-1">Prótese Protocolo · Carga Imediata · Unitários · Implantes Zigomáticos</div>
+                            <div class="category-text">Prótese Protocolo · Carga Imediata · Unitários · Implantes Zigomáticos</div>
                         </div>
 
                         <!-- Categoria: Harmonização -->
-                        <div class="text-left border-b border-white/5 pb-2">
+                        <div class="category-block">
                             <div class="category-title">HARMONIZAÇÃO OROFACIAL</div>
-                            <div class="category-text mt-1">Preenchimento Labial · Rinomodelação · Full Face · Bioestimulador de Colágeno</div>
+                            <div class="category-text">Preenchimento Labial · Rinomodelação · Full Face · Bioestimulador de Colágeno</div>
                         </div>
 
                         <!-- Categoria: Estética -->
-                        <div class="text-left border-b border-white/5 pb-2">
+                        <div class="category-block">
                             <div class="category-title">ESTÉTICA DENTAL</div>
-                            <div class="category-text mt-1">Lentes de Contato Dental · Facetas em Resina · Clareamento</div>
+                            <div class="category-text">Lentes de Contato Dental · Facetas em Resina · Clareamento</div>
                         </div>
 
                         <!-- Categoria: Clínica Geral -->
-                        <div class="text-left border-b border-white/5 pb-2">
+                        <div class="category-block">
                             <div class="category-title">CLÍNICA GERAL</div>
-                            <div class="category-text mt-1">Ortodontia Fixa e Invisível · Endodontia · Periodontia · Exodontias · Odontopediatria</div>
+                            <div class="category-text">Ortodontia Fixa e Invisível · Endodontia · Periodontia · Exodontias · Odontopediatria</div>
                         </div>
 
                         <!-- Categoria: Urgência -->
-                        <div class="text-left">
+                        <div class="category-block">
                             <div class="category-title">URGÊNCIA 24H</div>
-                            <div class="category-text mt-1">Atendimento de emergência a qualquer hora</div>
+                            <div class="category-text">Atendimento de emergência a qualquer hora</div>
                         </div>
 
                     </div>
@@ -359,15 +460,15 @@
         <!-- Rodapé Estruturado e Fixo ao Final da Página -->
         <footer>
             <div class="footer-content">
-                <span class="font-medium text-[0.76rem]">Clínica Reali · Odontologia e Estética</span>
-                <div class="my-1.5">
+                <span class="footer-title">Clínica Reali · Odontologia e Estética</span>
+                <div class="footer-address-wrapper">
                     <a class="footer-link" href="https://maps.app.goo.gl/NvWUKbM8pzLGhc5QA" target="_blank">
                         R. Cel. João Cursino, 185 – Vila Adyana<br>
                         São José dos Campos – SP · CEP 12243-680
                     </a>
                 </div>
-                <div class="mt-2">
-                    <a class="footer-link font-medium text-[0.78rem]" href="tel:+5512991843883">
+                <div class="footer-phone-wrapper">
+                    <a class="footer-link footer-phone-link" href="tel:+5512991843883">
                         (12) 99184-3883
                     </a>
                 </div>
@@ -407,7 +508,7 @@
         const img = new Image();
         img.src = "img/background-clinica-reali-odontologia-sjc.jpg";
         img.onload = function() {
-            // Se a imagem de fundo local carregar no ambiente de hospedagem do cliente, desativa a imagem de fallback
+            // Se a imagem de fundo local carregar com sucesso, desativa a imagem de fallback
             const fallback = document.querySelector('.bg-fallback-wrapper');
             if (fallback) fallback.style.display = 'none';
         };
