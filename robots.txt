@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://clinicaodontologicareali.vercel.app/sitemap.xml
